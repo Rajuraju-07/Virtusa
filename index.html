@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>Virtusa Careers 2026</title>
+    <link rel="icon"
+type="image/png"
+href="https://res.cloudinary.com/dib2empzv/image/upload/v1781336427/Logo_JZC_vuqm4p.png"/>
+
+    <style>
+  .jb-wrap {
+    --ink: #1f2937;
+    --paper: #FAF6EE;
+    --amber: #E8A33D;
+    --sage: #7A8B6F;
+    --rust: #C1502E;
+    --line: rgba(31,41,55,0.18);
+
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(31,41,55,0.025) 39px, rgba(31,41,55,0.025) 40px);
+    color: var(--ink);
+    padding: 32px 16px 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .jb-header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .jb-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .jb-title {
+    font-family: 'Oswald', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 6vw, 44px);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 6px;
+  }
+  .jb-sub {
+    font-size: 14px;
+    color: var(--ink);
+    opacity: 0.7;
+    margin: 0;
+  }
+
+.jb-sub-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red;
+    font-size: clamp(20px, 6vw, 22px);
+    font-weight: 700;
+}
+
+  .job-card {
+    position: relative;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 0 var(--line);
+    overflow: hidden;
+  }
+
+  .job-main { padding: 20px 22px 18px; }
+
+  .job-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .job-title {
+    font-family: 'Oswald', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 8px;
+  }
+
+  .job-meta {
+    font-size: 13px;
+    color: var(--ink);
+    opacity: 0.75;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .job-meta span::before {
+    content: "— ";
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .job-desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Perforated tear line — signature element */
+  .perf {
+    position: relative;
+    height: 0;
+    border-top: 2px dashed var(--ink);
+    opacity: 0.35;
+    margin: 0 22px;
+  }
+  .perf::before, .perf::after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    width: 18px;
+    height: 18px;
+    background: var(--paper);
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+  }
+  .perf::before { left: -29px; }
+  .perf::after { right: -29px; }
+
+  .job-stub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px 18px;
+    gap: 12px;
+  }
+  .date{
+grid-column:1/span 2;
+
+color:red;
+font-weight:600;
+}
+
+  .stub-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+  }
+
+  .apply-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--rust);
+    color: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .apply-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--ink);
+    color: #fff;
+  }
+  .apply-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+  
+  /* similar jobs */
+
+  .similar-job {
+ 
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+
+}
+  /* OPEN stamp */
+  .stamp {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    padding: 5px 10px;
+    border: 2px solid var(--sage);
+    color: var(--sage);
+    border-radius: 3px;
+    transform: rotate(4deg);
+    text-transform: uppercase;
+  }
+
+  /* Filled / closed state */
+  .job-card.filled { opacity: 0.55; }
+  .job-card.filled .stamp {
+    border-color: var(--rust);
+    color: var(--rust);
+    transform: rotate(-3deg);
+  }
+  .job-card.filled .apply-btn {
+    background: #aaa;
+    color: #eee;
+    box-shadow: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .jb-footer {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-top: 24px;
+  }
+    .footer,
+footer p{
+text-align:center !important;
+}
+  .jb-footer a { color: var(--rust); text-decoration: underline; 
+  }
+
+  
+
+  @media (max-width: 480px) {
+    .job-stub { flex-direction: column; align-items: stretch; text-align: center; }
+    .apply-btn { text-align: center; }
+    .perf { margin: 0 18px; }
+    .perf::before { left: -27px; }
+    .perf::after { right: -27px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .apply-btn { transition: none; }
+  }
+
+</style>
+
+       
+</head>
+
+<body>
+
+<div class="jb-wrap">
+
+    <!--=========================
+         Job Header
+    ==========================-->
+
+    <div class="jb-header">
+        <div class="jb-eyebrow">Virtusa Careers 2026</div>
+        <h1 class="jb-title">Virtusa </h1>
+        <p class="jb-sub">QA Engineer </p>
+    </div>
+
+    <!--=========================
+         Job Card
+    ==========================-->
+
+    <div class="job-card">
+
+        <div class="stamp">
+            OPEN
+        </div>
+
+        <div class="job-main">
+
+            <a class="hiring-btn" href="#ApplyNow">
+                🚀 Actively Hiring
+            </a>
+
+            <div class="info-item">
+                <span>💻</span>
+                <span>QA Engineer</span>
+            </div>
+
+            <div class="info-item">
+                <span>📍</span>
+                <span>Bengaluru, Karnataka (Hybrid)</span>
+            </div>
+
+
+            <div class="batch">
+                🎓 2025 / 2026 
+            </div>
+
+            <div class="posted">
+                💰 Up to ₹12 LPA
+            </div>
+            <div class="date">
+              🕒 Posted on 10-07-2026
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="main-content">
+
+        <!--Job Highlights-->
+
+        <div class="card">
+
+            <h2>Job Highlights</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>Company</strong> : Virtusa 
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : QA Engineer
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Bengaluru, Karnataka
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–3 Years
+                </div>
+
+                <div class="info-box">
+                    <strong>Eligible Batch</strong> : 2025 / 2026 
+                </div>
+
+                <div class="info-box">
+                    <strong>Expected Salary</strong> : Up to ₹12 LPA</div>
+
+            </div>
+
+        </div>
+
+        <!--Job Summary-->
+
+        <div class="card">
+
+            <h2>Job Summary</h2>
+
+            <p>
+                Virtusa Corporation is hiring <strong>QA Engineers</strong> to join
+                its Digital Assurance team. This role is ideal for fresh graduates
+                and early-career professionals interested in automation testing,
+                quality engineering, API testing, and cloud-based test automation.
+                You will work with Selenium, Java, CI/CD pipelines, and AWS to
+                ensure high-quality software delivery.
+            </p>
+
+        </div>
+
+        <!--Educational Qualification-->
+
+        <div class="card">
+
+            <h2>Educational Qualification</h2>
+
+            <ul>
+                <li>B.E. / B.Tech / M.E. / M.Tech in Computer Science, IT, or related field.</li>
+                <li>Eligible Batch: 2025 / 2026.</li>
+                <li>Freshers and candidates with up to 3 years of experience can apply.</li>
+            </ul>
+
+        </div>
+
+        <!--Key Responsibilities-->
+
+        <div class="card">
+
+            <h2>Key Responsibilities</h2>
+
+            <ul>
+                <li>Develop and execute UI, Backend, and API automation test cases.</li>
+                <li>Perform Regression, Integration, and Performance Testing.</li>
+                <li>Design and maintain scalable automation testing frameworks.</li>
+                <li>Create Selenium automation scripts using Java.</li>
+                <li>Develop BDD automation using Cucumber.</li>
+                <li>Integrate automated tests into CI/CD pipelines.</li>
+                <li>Perform cloud-based testing using AWS.</li>
+                <li>Manage defects and ensure overall software quality.</li>
+            </ul>
+
+        </div>
+
+        <!--Required Skills-->
+
+        <div class="card">
+
+            <h2>Required Skills</h2>
+
+            <ul>
+                <li>Selenium WebDriver with Java</li>
+                <li>Automation Testing</li>
+                <li>API Testing</li>
+                <li>Regression Testing</li>
+                <li>Integration Testing</li>
+                <li>Performance Testing</li>
+                <li>TestNG</li>
+                <li>JUnit</li>
+                <li>Cucumber BDD</li>
+                <li>Quality Engineering</li>
+            </ul>
+
+        </div>
+
+        <!--Preferred Skills-->
+
+        <div class="card">
+
+            <h2>Preferred Skills</h2>
+
+            <ul>
+                <li>AWS Cloud Testing</li>
+                <li>CI/CD Pipelines</li>
+                <li>Microservices Testing</li>
+                <li>REST API Automation</li>
+                <li>Test Strategy &amp; Planning</li>
+                <li>Defect Management</li>
+                <li>Digital Assurance Domain Knowledge</li>
+                <li>Problem Solving &amp; Communication Skills</li>
+            </ul>
+
+        </div>
+
+        <!--Benefits-->
+
+        <div class="card">
+
+            <h2>Benefits &amp; Perks</h2>
+
+            <ul>
+                <li>Competitive Salary Package.</li>
+                <li>Hybrid Work Model.</li>
+                <li>Learning &amp; Certification Opportunities.</li>
+                <li>Global Project Exposure.</li>
+                <li>Career Growth &amp; Mentorship.</li>
+                <li>Modern Testing Tools &amp; Technologies.</li>
+                <li>Inclusive Work Culture.</li>
+                <li>Health &amp; Employee Benefits.</li>
+            </ul>
+
+        </div>
+
+<!--Apply-->
+
+
+   <!--Apply-->
+
+       <div class="perf"></div>
+
+          <div class="job-stub" id="ApplyNow">
+
+
+          </div>
+
+            <!--Job -1-->
+
+        <div class="job-card">
+
+        <div class="stamp">
+            OPEN
+        </div>
+
+        <div class="job-main">
+
+           <div class="info-grid">
+
+<div class="info-box">
+                    <strong>Company</strong> : Virtusa 
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : QA Engineer
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Bengaluru, Karnataka
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–3 Years
+                </div>
+
+                <div class="info-box">
+                    <strong>Eligible Batch</strong> : 2025 / 2026 
+                </div>
+
+                <div class="info-box">
+                    <strong>Expected Salary</strong> : Up to ₹12 LPA</div>
+
+              </div>
+            </div>
+
+         <div class="perf"></div>
+
+          <div class="job-stub" id="ApplyNow">
+
+              <a class="apply-btn" href="https://www.virtusa.com/careers/in/bangalore/digital-assurance/qa-engineer/creq263318?source=taleo" style="display: table; margin: 0px auto;" target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+          <div class="job-stub" id="ApplyNow">
+
+              <a class="apply-btn" href="https://www.linkedin.com/jobs/view/4435681650/" style="display: table; margin: 0px auto;" target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+
+    </div>
+
+
+       <!--Job -2-->
+
+            <div class="job-card">
+
+        <div class="stamp">
+            OPEN
+        </div>
+
+        <div class="job-main">
+
+           <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>Company</strong> : Numerator
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : Associate QA Engineer
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Remote - India
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–2 Years | Freshers
+                </div>
+
+               <div class="info-box">
+                    <strong>Eligible Batch</strong> : 2024 / 2025 / 2026</div>
+                 </div>
+                 </div>
+
+         <div class="perf"></div>
+
+            <div class="job-stub" id="ApplyNow">
+
+              <a class="apply-btn" href="https://recruit.hirebridge.com/v3/careercenter/v2/details.aspx?jid=610831&amp;cid=7844&amp;locvalue=11121112&amp;bid=8&amp;src=LinkedIn" style="display: table; margin: 0px auto;" target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+
+           <div class="job-stub" id="ApplyNow">
+
+              <a class="apply-btn" href="https://www.linkedin.com/jobs/view/4438670168/" style="display: table; margin: 0px auto;" target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+
+    </div>
+
+
+
+
+        <!--Disclaimer-->
+
+        <div class="card">
+
+            <h2>📢 Disclaimer</h2>
+
+            <p>
+                This page, <strong>@jobzonecareer</strong>, shares job updates
+                for informational purposes only. We are not affiliated with,
+                endorsed by, or associated with <strong>Virtusa Corporation</strong>
+                unless explicitly stated.
+            </p>
+
+            <p>
+                We do not charge any fee for job applications, recruitment,
+                or placement assistance. Always apply through the official
+                Virtusa Careers website and beware of fraudulent job offers
+                requesting payment or personal information.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Paste your complete HTML here -->
+
+</body>
+</html>
